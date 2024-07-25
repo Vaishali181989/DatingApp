@@ -5,16 +5,19 @@
       
         <ul class="navbar-nav me-auto mb-2 mb-md-0" >
           @if(accountService.currentUser()){<!-- *ngIf="loggedIn"--we can also use this to hide*/-->
+            <li class="nav-item">
+              <a routerLink="/members" routerLinkActive="active" class="nav-link">Matches</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/lists" routerLinkActive="active" class="nav-link">Lists</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/messages" routerLinkActive="active" class="nav-link"> Messages</a>
+            </li>
+          }
           <li class="nav-item">
-            <a routerLink="/members" routerLinkActive="active" class="nav-link">Matches</a>
+            <a routerLink="/errors" routerLinkActive="active" class="nav-link"> Error</a>
           </li>
-          <li class="nav-item">
-            <a routerLink="/lists" routerLinkActive="active" class="nav-link">Lists</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/messages" routerLinkActive="active" class="nav-link"> Messages</a>
-          </li>
-        }
         </ul>
       
 
@@ -35,7 +38,8 @@
         <form #loginForm="ngForm" (ngSubmit)="login()" class="d-flex">
           <input name ="username" [(ngModel)]="model.username" class="form-control me-2" placeholder="Username">
           <input name = "password" [(ngModel)]="model.password" class="form-control me-2" placeholder="password" type="password">
-          <button class="btn btn-success" type="submit">Login</button>
+          <button type="submit" class="btn btn-primary" fdprocessedid="qsubgp">Login</button>
+          
         </form>
       }
         
